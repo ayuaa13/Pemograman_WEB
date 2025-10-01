@@ -13,9 +13,13 @@ html {
 
 /* Body */
 body {
-  background-color: #fdfdfd;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4, #a18cd1);
+  background-attachment: fixed; /* biar gradasinya tetap saat scroll */
   color: #333;
-  line-height: 1.8;
 }
 
 /* Header */
