@@ -75,6 +75,36 @@ section h2 {
   text-align: center;
 }
 
+/* Styling untuk list keluarga */
+.tentang-content ul {
+  list-style: none; /* hilangkan bullet default */
+  padding: 20px;
+  background: #fff7fa; /* warna background lembut */
+  border-left: 5px solid #ee0979; /* garis aksen pink */
+  border-radius: 10px;
+  max-width: 800px;
+  margin: 20px auto;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.tentang-content ul li {
+  margin: 12px 0;
+  font-size: 16px;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 28px;
+}
+
+/* custom bullet */
+.tentang-content ul li::before {
+  content: "✔";  /* bisa diganti "•", "➤", dsb */
+  position: absolute;
+  left: 0;
+  color: #ee0979;
+  font-weight: bold;
+}
+
 /* Profile */
 .profile-photo {
   width: 200px;
@@ -97,6 +127,56 @@ section h2 {
 .tentang-content img:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+}
+
+.org-card {
+  background: #fdf5ff;
+  border: 2px solid #b26bff;
+  border-radius: 12px;
+  padding: 25px;
+  max-width: 600px;
+  margin: 40px auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.org-card h3 {
+  color: #9b2fff;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.timeline {
+  position: relative;
+  margin: 0;
+  padding: 0 0 0 20px;
+  border-left: 3px solid #b26bff;
+}
+
+.timeline-item {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.timeline-item::before {
+  content: "●";
+  position: absolute;
+  left: -12px;
+  top: 0;
+  color: #9b2fff;
+  font-size: 18px;
+}
+
+.timeline-item .year {
+  display: inline-block;
+  font-weight: bold;
+  color: #6a0dad;
+  margin-bottom: 5px;
+}
+
+.timeline-item p {
+  margin: 0;
+  color: #333;
+  font-size: 15px;
 }
 
 /* Pendidikan - tabel */
@@ -127,6 +207,40 @@ table tr:nth-child(even) {
 audio {
   margin-top: 15px;
   outline: none;
+}
+
+.music-card {
+  background: #fff5f7;
+  border: 2px solid #ff5e78;
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 400px;
+  margin: 30px auto;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.music-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.music-card h3 {
+  color: #ff2e63;
+  margin-bottom: 10px;
+}
+
+.music-card p {
+  margin: 5px 0;
+  color: #333;
+  font-size: 15px;
+}
+
+.music-card audio {
+  margin-top: 15px;
+  width: 100%;
+  border-radius: 8px;
 }
 
 /* Kontak */
