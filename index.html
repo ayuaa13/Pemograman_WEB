@@ -33,9 +33,6 @@
         <p>Alamat: Jl. Sulawesi No. 67 Rt. 21, Sangatta Utara
             <a href="https://maps.app.goo.gl/v2rBFZCPRyzbmiLb8" target="_blank">Lihat di Google Maps></a>
         </p>   
-        <p>Email: 
-            <a href="ayuzr13@gmail.com" target="_blank"></a>
-        </p>
         </div>
     </section>
 
@@ -156,6 +153,59 @@
         <p>&copy; 2025 Ayu Azzahrah. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+    // 🔹 Efek animasi saat scroll
+    document.addEventListener("DOMContentLoaded", function () {
+        const sections = document.querySelectorAll("section, .music-card, .org-card");
+
+        const options = {
+            threshold: 0.2
+        };
+
+        const observer = new IntersectionObserver(function (entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, options);
+
+        sections.forEach(section => {
+            section.classList.add("hidden");
+            observer.observe(section);
+        });
+    });
+
+    const backToTop = document.createElement("button");
+    backToTop.innerHTML = "⬆️";
+    backToTop.id = "backToTop";
+    document.body.appendChild(backToTop);
+
+    backToTop.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+            backToTop.style.display = "block";
+        } else {
+            backToTop.style.display = "none";
+        }
+    });
+    </script>
+    <script>
+    const navLinks = document.querySelectorAll("nav ul li a");
+
+    navLinks.forEach(link => {
+        link.addEventListener("click", () => {
+            navLinks.forEach(l => l.classList.remove("active"));
+            link.classList.add("active");
+        });
+    });
+    </script>
+
 </body>
 </html>
 

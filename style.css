@@ -60,6 +60,50 @@ nav ul li a:hover {
   border-bottom: 2px solid #ffe600;
 }
 
+/* 🔹 Navbar Link Animasi */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  padding: 8px 12px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, #ff2e63, #b26bff);
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+nav ul li a:hover {
+  color: #ff2e63;
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+  width: 100%;
+}
+
 /* Section umum */
 section {
   padding: 80px 20px;
@@ -284,6 +328,41 @@ div a[href="#top"] {
 div a[href="#top"]:hover {
   background: linear-gradient(90deg, #ff6a00, #ee0979);
   transform: translateY(-3px);
+}
+
+/* 🔹 Animasi Scroll */
+.hidden {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-out;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 🔹 Tombol Back to Top */
+#backToTop {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #ff2e63;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 12px 15px;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, background 0.3s ease;
+  z-index: 999;
+}
+
+#backToTop:hover {
+  background: #e6004c;
+  transform: scale(1.1);
 }
 
 /* Footer */
